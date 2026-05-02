@@ -1,20 +1,28 @@
 import axios from 'axios';
 
+// Detect environment
+const isProduction = import.meta.env.PROD;
+const API_URL = isProduction 
+  ? 'https://goldfish-app-9bzzn.ondigitalocean.app/api'
+  : 'http://localhost:5000/api';
+
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: API_URL,
   withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
+  timeout: 10000
 });
 
 // Request interceptor
 axiosInstance.interceptors.request.use(
   (config) => {
-    // You can add loading states here if needed
+    console.log(`Making ${config.method?.toUpperCase()} request to: ${config.baseURL}${config.url}`);
     return config;
   },
   (error) => {
+    console.error('Request error:', error);
     return Promise.reject(error);
   }
 );
@@ -23,12 +31,18 @@ axiosInstance.interceptors.request.use(
 axiosInstance.interceptors.response.use(
   (response) => response,
   (error) => {
+    console.error('Response error:', error.response?.status, error.response?.data);
+    
     if (error.response?.status === 401) {
-      // Only redirect if not already on login page
       if (!window.location.pathname.includes('/login')) {
         window.location.href = '/login';
       }
     }
+    
+    if (error.response?.status === 404) {
+      console.error('API endpoint not found. Check your backend URL.');
+    }
+    
     return Promise.reject(error);
   }
 );
