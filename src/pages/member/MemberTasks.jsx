@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../utils/axiosConfig';
 import { motion } from 'framer-motion';
 import { FiCalendar, FiFlag, FiCheckCircle, FiClock } from 'react-icons/fi';
 import { format } from 'date-fns';

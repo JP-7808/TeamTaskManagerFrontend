@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../utils/axiosConfig';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FiPlus, FiEdit2, FiTrash2, FiFilter, FiCalendar, 

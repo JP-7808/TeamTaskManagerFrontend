@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import axios from '../../utils/axiosConfig';
 import { motion } from 'framer-motion';
 import { FiEdit2, FiTrash2, FiUserCheck, FiUserX, FiMail } from 'react-icons/fi';
 import toast from 'react-hot-toast';
