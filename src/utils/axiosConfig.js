@@ -1,10 +1,9 @@
 import axios from 'axios';
 
 // Detect environment
-const isProduction = import.meta.env.PROD;
-const API_URL = isProduction 
-  ? 'https://goldfish-app-9bzzn.ondigitalocean.app/api'
-  : 'http://localhost:5000/api';
+const API_URL = import.meta.env.PROD 
+  ? 'https://goldfish-app-9bzzn.ondigitalocean.app/api'   // ← Your backend
+  : '/api';   // This will be handled by Vite proxy in development
 
 const axiosInstance = axios.create({
   baseURL: API_URL,

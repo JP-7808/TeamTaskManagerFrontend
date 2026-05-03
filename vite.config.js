@@ -7,21 +7,9 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': {
-        target: 'https://goldfish-app-9bzzn.ondigitalocean.app',
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        secure: true
-      }
-    }
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['react-icons', 'framer-motion', 'recharts']
-        }
+        secure: false,
       }
     }
   }
