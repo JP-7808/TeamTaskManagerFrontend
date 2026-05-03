@@ -104,6 +104,21 @@ http://localhost:3000
 
 ---
 
+## 🔑 Demo Credentials
+
+Use the following credentials to test the application:
+
+### 👨‍💼 Admin
+- **Email:** jayp7808@gmail.com  
+- **Password:** Jay@2002  
+
+### 👥 Members
+- **Email:** jayp78088@gmail.com  
+- **Password:** Jay@2002  
+
+- **Email:** jay780884@gmail.com  
+- **Password:** Jay@2002  
+
 ## 🔗 Backend Integration
 
 This frontend requires a backend API to function properly.
