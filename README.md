@@ -1,6 +1,6 @@
 # 🚀 Backend Github Repo
 
-https://github.com/JP-7808/TeamTaskManagerFrontend
+https://github.com/JP-7808/TeamTaskManagerBackend
 
 # 🚀 Team Task Manager Frontend
 
