@@ -1,13 +1,21 @@
 import axios from 'axios';
 
 const getApiUrl = () => {
-  // For production (Vercel)
-  if (import.meta.env.PROD) {
-    return 'https://goldfish-app-9bzzn.ondigitalocean.app/api';
-  }
+  const isProd = import.meta.env.PROD;
   
-  // For development
-  return '/api';
+  console.log('🔍 ENV DEBUG =====================');
+  console.log('Is Production:', isProd);
+  console.log('MODE:', import.meta.env.MODE);
+  console.log('VITE_API_URL:', import.meta.env.VITE_API_URL);
+  
+  const url = isProd 
+    ? 'https://goldfish-app-9bzzn.ondigitalocean.app/api'
+    : '/api';
+  
+  console.log('✅ Final API URL:', url);
+  console.log('==================================');
+  
+  return url;
 };
 
 const axiosInstance = axios.create({
