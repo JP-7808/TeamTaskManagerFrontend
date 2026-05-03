@@ -93,7 +93,7 @@ npm install
 ### ▶️ Run the Application
 
 ```bash
-npm start
+npm run dev
 ```
 
 The app will run at:
